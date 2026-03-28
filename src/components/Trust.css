@@ -1,0 +1,151 @@
+.trust__coverage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 36px;
+  margin-bottom: 48px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.trust__coverage-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.trust__coverage-icon { font-size: 2rem; }
+
+.trust__coverage-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.trust__coverage-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.trust__coverage-right { flex-shrink: 0; }
+
+.trust__coverage-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.trust__coverage-value {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.trust__coverage-unit {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.trust__badges {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 80px;
+}
+
+.trust__badge {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  cursor: default;
+}
+
+.trust__badge-icon { font-size: 1.8rem; }
+
+.trust__badge-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.trust__header { text-align: center; margin-bottom: 40px; }
+
+.trust__testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.trust__card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.trust__stars {
+  color: var(--gold);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.trust__quote {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-style: italic;
+  flex: 1;
+}
+
+.trust__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.trust__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), #b8860b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0a0a0c;
+  flex-shrink: 0;
+}
+
+.trust__name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.trust__loc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .trust__badges { grid-template-columns: repeat(2, 1fr); }
+  .trust__testimonials { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 500px) {
+  .trust__badges { grid-template-columns: repeat(2, 1fr); }
+  .trust__coverage { flex-direction: column; }
+  .trust__coverage-stat { align-items: flex-start; }
+}

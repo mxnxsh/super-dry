@@ -1,0 +1,129 @@
+.contact__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contact__header .section-sub { margin: 0 auto; }
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.contact__item-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--gold);
+  background: rgba(212,175,55,0.1);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.contact__item-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+
+.contact__item-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.contact__arrow {
+  margin-left: auto;
+  color: var(--gold);
+  font-size: 1.1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.contact__item:hover .contact__arrow { opacity: 1; }
+
+/* Form */
+.contact__form {
+  padding: 36px 32px;
+}
+
+.contact__form-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.contact__form-sub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+}
+
+.contact__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact__field label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+.contact__field input {
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.25s;
+}
+
+.contact__field input:focus {
+  border-color: var(--gold);
+  background: rgba(212,175,55,0.04);
+}
+
+.contact__field input::placeholder { color: var(--white-30); }
+
+@media (max-width: 768px) {
+  .contact__grid { grid-template-columns: 1fr; }
+  .contact__form { padding: 28px 20px; }
+}
