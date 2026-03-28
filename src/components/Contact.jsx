@@ -70,8 +70,8 @@ export default function Contact() {
                   </svg>
                 ),
                 label: 'Instagram',
-                value: '@superdrylaundry',
-                href: 'https://instagram.com/superdrylaundry',
+                value: '@superdrylaundry3',
+                href: 'https://instagram.com/superdrylaundry3',
               },
             ].map((item) => (
               <motion.a
