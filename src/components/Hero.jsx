@@ -118,7 +118,7 @@ export default function Hero() {
         >
           <motion.div variants={itemVariants} className="hero__tag">
             <span className="glow-dot" />
-            <span>Serving Andheri → Mira Road</span>
+            <span>Serving Vile Parle → Borivali</span>
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="hero__title">

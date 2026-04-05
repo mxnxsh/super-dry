@@ -32,7 +32,7 @@
 }
 
 .pricing__tab.active {
-  background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.05));
+  background: linear-gradient(135deg, rgba(43, 130, 201, 0.15), rgba(43, 130, 201, 0.05));
   border-color: var(--gold);
   color: var(--gold);
 }
@@ -55,8 +55,8 @@
 }
 
 .pricing__row--popular {
-  background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(212,175,55,0.04));
-  border-color: rgba(212,175,55,0.4);
+  background: linear-gradient(135deg, rgba(43, 130, 201, 0.1), rgba(43, 130, 201, 0.04));
+  border-color: rgba(43, 130, 201, 0.35);
 }
 
 .pricing__row-left {

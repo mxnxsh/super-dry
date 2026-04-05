@@ -25,7 +25,7 @@
 }
 
 .floating-cta__btn.active {
-  background: linear-gradient(135deg, var(--gold), #b8860b);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
   box-shadow: 0 6px 24px var(--gold-glow);
 }
 
@@ -59,7 +59,7 @@
 }
 
 .floating-cta__option--call {
-  background: var(--bg-secondary);
+  background: #ffffff;
   border: 1px solid var(--border-gold);
   color: var(--gold);
 }

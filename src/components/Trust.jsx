@@ -47,7 +47,7 @@ export default function Trust() {
             <div className="trust__coverage-icon">📍</div>
             <div>
               <h3 className="trust__coverage-title">Service Area</h3>
-              <p className="trust__coverage-text">Bandra → Andheri → Goregaon → Malad → Kandivali → Borivali → Mira Road</p>
+              <p className="trust__coverage-text">Vile Parle → Andheri → Jogeshwari → Goregaon → Malad → Kandivali → Borivali → Mira Road</p>
             </div>
           </div>
           <div className="trust__coverage-right">
