@@ -36,12 +36,17 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#" className="navbar__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <span className="navbar__logo-icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <path d="M14 2 C8 2 3 7 3 13 S8 24 14 24 S25 19 25 13 S20 2 14 2Z" stroke="#d4af37" strokeWidth="1.5" fill="none"/>
-              <path d="M9 13 L14 8 L19 13" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <line x1="14" y1="8" x2="14" y2="20" stroke="#d4af37" strokeWidth="2" strokeLinecap="round"/>
-              <circle cx="14" cy="6" r="1.5" fill="#d4af37"/>
-            </svg>
+            {/* <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path d="M14 2 C8 2 3 7 3 13 S8 24 14 24 S25 19 25 13 S20 2 14 2Z" stroke="#d4af37" strokeWidth="1.5" fill="none" />
+              <path d="M9 13 L14 8 L19 13" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <line x1="14" y1="8" x2="14" y2="20" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" />
+              <circle cx="14" cy="6" r="1.5" fill="#d4af37" />
+            </svg> */}
+            <img
+              src='/assets/images/logo.png'
+              alt="SuperDry Logo"
+              className="navbar__logo-img"
+            />
           </span>
           <span>Super<span className="navbar__logo-accent">Dry</span></span>
         </a>
