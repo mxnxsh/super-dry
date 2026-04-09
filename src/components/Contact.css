@@ -123,6 +123,39 @@
 
 .contact__field input::placeholder { color: var(--white-30); }
 
+.contact__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.contact__pill {
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border-subtle);
+  border-radius: 50px;
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.contact__pill:hover {
+  border-color: var(--gold);
+  color: var(--text-primary);
+}
+
+.contact__pill.active {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  border-color: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px var(--gold-glow);
+}
+
 @media (max-width: 768px) {
   .contact__grid { grid-template-columns: 1fr; }
   .contact__form { padding: 28px 20px; }

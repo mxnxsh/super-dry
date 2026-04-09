@@ -8,12 +8,15 @@ export default function Contact() {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [locality, setLocality] = useState('')
+  const [slot, setSlot] = useState('')
 
-  const isValid = name.trim() !== '' && phone.trim() !== '' && locality.trim() !== ''
+  const slots = ['9AM - 11AM', '11AM - 1PM', '1PM - 3PM', '3PM - 5PM', '5PM - 7PM']
+
+  const isValid = name.trim() !== '' && phone.trim() !== '' && locality.trim() !== '' && slot !== ''
 
   const handleWhatsApp = () => {
     if (!isValid) return
-    const message = `Hi, I want to book a laundry pickup!\nName: ${name}\nPhone: ${phone}\nLocality: ${locality}`
+    const message = `Hi, I want to book a laundry pickup!\nName: ${name}\nPhone: ${phone}\nLocality: ${locality}\nPickup Slot: ${slot}`
     window.open(`https://wa.me/918960663004?text=${encodeURIComponent(message)}`, '_blank')
   }
 
@@ -106,15 +109,46 @@ export default function Contact() {
             <div className="contact__fields">
               <div className="contact__field">
                 <label>Your Name</label>
-                <input type="text" placeholder="e.g. Aditya Sharma" value={name} onChange={(e) => setName(e.target.value)} />
+                <input 
+                  type="text" 
+                  placeholder="e.g. Aditya Sharma" 
+                  value={name} 
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    if (/^[a-zA-Z\s]*$/.test(val)) setName(val);
+                  }} 
+                />
               </div>
               <div className="contact__field">
                 <label>Phone Number</label>
-                <input type="tel" placeholder="+91 XXXXX XXXXX" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                <input 
+                  type="tel" 
+                  placeholder="+91 XXXXX XXXXX" 
+                  value={phone} 
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    if (/^[+\d\s]*$/.test(val)) setPhone(val);
+                  }} 
+                />
               </div>
               <div className="contact__field">
                 <label>Locality</label>
                 <input type="text" placeholder="e.g. Andheri West" value={locality} onChange={(e) => setLocality(e.target.value)} />
+              </div>
+              <div className="contact__field">
+                <label>Pick up Slot</label>
+                <div className="contact__pills">
+                  {slots.map(s => (
+                    <button
+                      key={s}
+                      type="button"
+                      className={`contact__pill ${slot === s ? 'active' : ''}`}
+                      onClick={() => setSlot(s)}
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
 
