@@ -1,5 +1,5 @@
 .footer {
-  padding: 48px 0 32px;
+  padding: 56px 0 36px;
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-subtle);
 }
@@ -10,6 +10,12 @@
   align-items: center;
   gap: 24px;
   text-align: center;
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer__logo {
@@ -42,7 +48,57 @@
 }
 .footer__link:hover { color: var(--gold); }
 
+/* Horizontal rule */
+.footer__hr {
+  width: 100%;
+  max-width: 480px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+}
+
+/* Legal links */
+.footer__legal-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer__legal-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--font);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(43, 130, 201, 0.3);
+  transition: all 0.25s;
+}
+
+.footer__legal-link:hover {
+  text-decoration-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.footer__legal-dot {
+  color: var(--border-subtle);
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+/* Copyright */
 .footer__copy {
   font-size: 0.75rem;
-  color: var(--white-30);
+  color: var(--text-secondary);
+  opacity: 0.7;
+  line-height: 1.7;
+}
+
+.footer__copy span {
+  opacity: 0.6;
 }

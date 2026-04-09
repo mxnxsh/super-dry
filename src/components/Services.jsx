@@ -80,6 +80,32 @@ const services = [
     desc: 'We collect & deliver. 48–72 hr turnaround. Serving Vile Parle to Borivali.',
     tag: 'Free',
   },
+  {
+    icon: (
+      <svg viewBox="0 0 48 48" fill="none">
+        <rect x="6" y="16" width="20" height="24" rx="3" stroke="currentColor" strokeWidth="2" />
+        <rect x="22" y="10" width="20" height="30" rx="3" stroke="currentColor" strokeWidth="2" />
+        <path d="M12 22h8M12 28h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+        <path d="M28 16h8M28 22h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+      </svg>
+    ),
+    title: 'Free Pickup & Delivery',
+    desc: 'We collect & deliver. 48–72 hr turnaround. Serving Vile Parle to Borivali.',
+    tag: 'Free',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 48 48" fill="none">
+        <rect x="6" y="16" width="20" height="24" rx="3" stroke="currentColor" strokeWidth="2" />
+        <rect x="22" y="10" width="20" height="30" rx="3" stroke="currentColor" strokeWidth="2" />
+        <path d="M12 22h8M12 28h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+        <path d="M28 16h8M28 22h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+      </svg>
+    ),
+    title: 'Free Pickup & Delivery',
+    desc: 'We collect & deliver. 48–72 hr turnaround. Serving Vile Parle to Borivali.',
+    tag: 'Free',
+  },
 ]
 
 /* ── Full price list data (directly from images) ── */
@@ -89,9 +115,9 @@ const priceCategories = [
     label: 'Dry Cleaning',
     hasSteamIron: true,
     items: [
-      { name: 'Anarkali ( Regular )', price: 220, steam: 80 },
-      { name: 'Anarkali ( Light work )', price: 300, steam: 110 },
-      { name: 'Anarkali ( Party wear )', price: 450, steam: 250 },
+      { name: 'Anarkali ( Regular )', price: 350, steam: 80 },
+      { name: 'Anarkali ( Light work )', price: 450, steam: 110 },
+      { name: 'Anarkali ( Party wear )', price: 550, steam: 250 },
       { name: 'Bed Cover / Bedsheet ( Single )', price: 280, steam: 110 },
       { name: 'Bed Cover / Bedsheet ( Double )', price: 330, steam: 150 },
       { name: 'Blanket / Quilt ( Single )', price: 350, steam: null },
@@ -143,8 +169,8 @@ const priceCategories = [
       { name: 'Pyajama', price: 110, steam: 35 },
       { name: 'Razai ( Single )', price: 350, steam: null },
       { name: 'Razai ( Double )', price: 450, steam: null },
-      { name: 'Rug ( Small )', price: 200, steam: null },
-      { name: 'Rug ( Medium )', price: 350, steam: null },
+      { name: 'Rug ( Small )', price: 350, steam: null },
+      { name: 'Rug ( Medium )', price: 450, steam: null },
       { name: 'Salwar', price: 120, steam: 35 },
       { name: 'Saree ( Cotton )', price: 300, steam: 80 },
       { name: 'Saree ( Silk )', price: 350, steam: 150 },
@@ -198,8 +224,8 @@ const priceCategories = [
     ],
   },
   {
-    id: 'iron',
-    label: 'Iron',
+    id: 'steam-iron',
+    label: 'Steam Iron',
     hasSteamIron: false,
     items: [
       { name: 'Steam Iron', price: 35 },
