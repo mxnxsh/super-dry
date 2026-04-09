@@ -89,9 +89,8 @@ const services = [
         <path d="M28 16h8M28 22h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
       </svg>
     ),
-    title: 'Free Pickup & Delivery',
-    desc: 'We collect & deliver. 48–72 hr turnaround. Serving Vile Parle to Borivali.',
-    tag: 'Free',
+    title: 'Express Delivery',
+    desc: '24-hr fast delivery for urgent orders.',
   },
   {
     icon: (
@@ -102,9 +101,8 @@ const services = [
         <path d="M28 16h8M28 22h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
       </svg>
     ),
-    title: 'Free Pickup & Delivery',
-    desc: 'We collect & deliver. 48–72 hr turnaround. Serving Vile Parle to Borivali.',
-    tag: 'Free',
+    title: 'Commercial',
+    desc: 'Specialized laundry services for hotels, gyms, and businesses.Bulk orders. ',
   },
 ]
 
