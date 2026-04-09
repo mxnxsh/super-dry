@@ -10,7 +10,7 @@ import Footer from './components/Footer'
 import FloatingCTA from './components/FloatingCTA'
 import LegalPage from './components/LegalPage'
 import { Analytics } from '@vercel/analytics/react'
-
+import { SpeedInsights } from '@vercel/speed-insights/react';
 function App() {
   const [page, setPage] = useState('home')
 
@@ -22,6 +22,7 @@ function App() {
         <Footer onLegalClick={() => setPage('legal')} />
         <FloatingCTA />
         <Analytics />
+        <SpeedInsights />
       </>
     )
   }
@@ -43,6 +44,7 @@ function App() {
       <Footer onLegalClick={() => setPage('legal')} />
       <FloatingCTA />
       <Analytics />
+      <SpeedInsights />
     </div>
   )
 }
