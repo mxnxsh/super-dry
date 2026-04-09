@@ -74,6 +74,15 @@
   line-height: 1.6;
 }
 
+.services__disclaimer {
+  font-size: 0.75rem;
+  color: var(--gold);
+  margin-top: 6px;
+  font-style: italic;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
 .services__arrow {
   margin-top: 20px;
   color: var(--gold);

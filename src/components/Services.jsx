@@ -16,6 +16,7 @@ const services = [
     title: 'Laundry by Kilo',
     desc: 'Wash & Fold from ₹150/kg · Wash & Iron from ₹180/kg. Perfect for everyday clothes.',
     tag: 'Most Popular',
+    targetTab: 'laundry',
   },
   {
     icon: (
@@ -27,6 +28,7 @@ const services = [
     title: 'Dry Cleaning',
     desc: 'Professional solvent-based care for delicate & designer garments. Starting ₹99.',
     tag: 'Premium',
+    targetTab: 'drycleaning',
   },
   {
     icon: (
@@ -40,6 +42,7 @@ const services = [
     title: 'Steam Iron',
     desc: 'Precision steam ironing that removes every crease. Starting just ₹35/piece.',
     tag: null,
+    targetTab: 'steam-iron',
   },
   {
     icon: (
@@ -53,6 +56,7 @@ const services = [
     title: 'Shoes & Accessories',
     desc: 'Flipflops, sports, suede & leather shoes. Laptop bags too. From ₹250.',
     tag: null,
+    targetTab: 'accessories',
   },
   {
     icon: (
@@ -78,6 +82,7 @@ const services = [
     ),
     title: 'Free Pickup & Delivery',
     desc: 'We collect & deliver. 48–72 hr turnaround. Serving Vile Parle to Borivali.',
+    disclaimer: '*Free pickup & delivery on orders above ₹500',
     tag: 'Free',
   },
   {
@@ -369,6 +374,16 @@ export default function Services() {
     setPage(1)
   }
 
+  const handleServiceClick = (targetTab) => {
+    if (targetTab) {
+      handleTabChange(targetTab)
+    }
+    // slightly delay scroll to ensure React updates the DOM/tab switch first
+    setTimeout(() => {
+      document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 50)
+  }
+
   return (
     <section id="services" className="section services" ref={ref}>
       <div className="container">
@@ -401,11 +416,14 @@ export default function Services() {
               animate={inView ? 'visible' : 'hidden'}
               whileHover={{ y: -8, scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              onClick={() => handleServiceClick(s.targetTab || 'all')}
+              style={{ cursor: 'pointer' }}
             >
               {s.tag && <span className="services__tag">{s.tag}</span>}
               <div className="services__icon">{s.icon}</div>
               <h3 className="services__title">{s.title}</h3>
               <p className="services__desc">{s.desc}</p>
+              {s.disclaimer && <p className="services__disclaimer">{s.disclaimer}</p>}
               <div className="services__arrow">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />

@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react'
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
+import { useRef } from 'react'
+import { motion } from 'framer-motion'
 import './Hero.css'
 
 function FloatingHanger() {
@@ -97,9 +97,6 @@ const itemVariants = {
 
 export default function Hero() {
   const ref = useRef(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const y = useSpring(useTransform(scrollYProgress, [0, 1], [0, 120]), { stiffness: 60, damping: 20 })
-  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
 
   return (
     <section id="home" className="hero" ref={ref}>
@@ -108,7 +105,7 @@ export default function Hero() {
       <div className="hero__glow hero__glow--2" />
       <div className="hero__grid-overlay" />
 
-      <motion.div className="container hero__inner" style={{ y, opacity }}>
+      <motion.div className="container hero__inner">
         {/* Left content */}
         <motion.div
           className="hero__content"
