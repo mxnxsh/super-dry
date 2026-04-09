@@ -9,6 +9,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import FloatingCTA from './components/FloatingCTA'
 import LegalPage from './components/LegalPage'
+import { Analytics } from '@vercel/analytics/react'
 
 function App() {
   const [page, setPage] = useState('home')
@@ -20,6 +21,7 @@ function App() {
         <LegalPage onBack={() => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }} />
         <Footer onLegalClick={() => setPage('legal')} />
         <FloatingCTA />
+        <Analytics />
       </>
     )
   }
@@ -40,6 +42,7 @@ function App() {
       </main>
       <Footer onLegalClick={() => setPage('legal')} />
       <FloatingCTA />
+      <Analytics />
     </div>
   )
 }
