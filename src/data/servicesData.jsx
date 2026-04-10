@@ -3,9 +3,12 @@ export const servicesData = [
     image: '/assets/images/laundry_by_kilo.jpg',
     icon: (
       <svg viewBox="0 0 48 48" fill="none">
-        <rect x="8" y="14" width="32" height="26" rx="4" stroke="currentColor" strokeWidth="2" />
-        <path d="M16 14V10a8 8 0 0116 0v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <path d="M20 28l3 3 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="8" y="6" width="32" height="36" rx="4" stroke="currentColor" strokeWidth="2" />
+        <path d="M8 16h32" stroke="currentColor" strokeWidth="2" />
+        <circle cx="24" cy="28" r="8" stroke="currentColor" strokeWidth="2" />
+        <path d="M24 32a4 4 0 000-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="14" cy="11" r="1.5" fill="currentColor" />
+        <circle cx="19" cy="11" r="1.5" fill="currentColor" />
       </svg>
     ),
     title: 'Laundry by Kilo',
@@ -17,8 +20,10 @@ export const servicesData = [
     image: '/assets/images/dry_cleaning.jpg',
     icon: (
       <svg viewBox="0 0 48 48" fill="none">
-        <path d="M12 20h24M24 8v12M15 34l-4 6h26l-4-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M18 28l6-8 6 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M24 12v4M24 12a4 4 0 10-4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path d="M10 24l14-8 14 8v16H10V24z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M24 16v24M16 26l8 4 8-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M38 12l2-2M42 16l2-2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
       </svg>
     ),
     title: 'Dry Cleaning',
@@ -30,10 +35,9 @@ export const servicesData = [
     image: '/assets/images/steam_iron.jpg',
     icon: (
       <svg viewBox="0 0 48 48" fill="none">
-        <path d="M10 36c0-12 4-24 14-24s14 12 14 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <path d="M8 36h32" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <path d="M22 18c0-3 4-6 4-10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <path d="M28 20c2-2 5-2 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path d="M8 32h32l-4-12H18L8 32z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M18 20v-6h12a4 4 0 014 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path d="M14 40v2s2-2 4 0 2 2 4 0 2-2 4 0 2 2 4 0 2-2 4 0 2 2 4 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
       </svg>
     ),
     title: 'Steam Iron',
@@ -45,10 +49,10 @@ export const servicesData = [
     image: '/assets/images/shoes_accessories.jpg',
     icon: (
       <svg viewBox="0 0 48 48" fill="none">
-        <ellipse cx="24" cy="30" rx="14" ry="10" stroke="currentColor" strokeWidth="2" />
-        <path d="M14 30c0-6 4-16 10-16s10 10 10 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <path d="M20 40h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="24" cy="22" r="2" fill="currentColor" opacity="0.4" />
+        <path d="M10 34s4-8 12-8 16 4 16 8v2a2 2 0 01-2 2H12a2 2 0 01-2-2v-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path d="M16 26l4-2M22 28l4-2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+        <path d="M32 16h10v10h-10z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M35 16v-4a2 2 0 014 0v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
     title: 'Shoes & Accessories',
@@ -60,10 +64,11 @@ export const servicesData = [
     image: '/assets/images/home_furnishing.jpg',
     icon: (
       <svg viewBox="0 0 48 48" fill="none">
-        <rect x="6" y="10" width="36" height="28" rx="4" stroke="currentColor" strokeWidth="2" />
-        <path d="M6 20h36" stroke="currentColor" strokeWidth="2" opacity="0.4" />
-        <path d="M18 10v10M30 10v10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
-        <path d="M14 30h6M26 30h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
+        <path d="M8 36V16a4 4 0 014-4h24a4 4 0 014 4v20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path d="M6 36h36" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <rect x="14" y="20" width="8" height="6" rx="2" stroke="currentColor" strokeWidth="2" />
+        <rect x="26" y="20" width="8" height="6" rx="2" stroke="currentColor" strokeWidth="2" />
+        <path d="M8 30h32v6H8v-6z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
       </svg>
     ),
     title: 'Home Furnishings',
@@ -71,13 +76,14 @@ export const servicesData = [
     tag: null,
   },
   {
-    image: '/assets/images/dry_cleaning.jpg',
+    image: '/assets/images/free_pickup_delivery.jpg',
     icon: (
       <svg viewBox="0 0 48 48" fill="none">
-        <rect x="6" y="16" width="20" height="24" rx="3" stroke="currentColor" strokeWidth="2" />
-        <rect x="22" y="10" width="20" height="30" rx="3" stroke="currentColor" strokeWidth="2" />
-        <path d="M12 22h8M12 28h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
-        <path d="M28 16h8M28 22h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+        <path d="M10 18h16v20H10z" stroke="currentColor" strokeWidth="2" />
+        <path d="M26 24h8l5 6v8h-13V24z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+        <circle cx="16" cy="38" r="3" stroke="currentColor" strokeWidth="2" />
+        <circle cx="33" cy="38" r="3" stroke="currentColor" strokeWidth="2" />
+        <path d="M26 30h13" stroke="currentColor" strokeWidth="2" opacity="0.6" />
       </svg>
     ),
     title: 'Free Pickup & Delivery',
@@ -86,26 +92,25 @@ export const servicesData = [
     tag: 'Free',
   },
   {
-    image: '/assets/images/dry_cleaning.jpg',
+    image: '/assets/images/express_delivery.jpg',
     icon: (
       <svg viewBox="0 0 48 48" fill="none">
-        <rect x="6" y="16" width="20" height="24" rx="3" stroke="currentColor" strokeWidth="2" />
-        <rect x="22" y="10" width="20" height="30" rx="3" stroke="currentColor" strokeWidth="2" />
-        <path d="M12 22h8M12 28h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
-        <path d="M28 16h8M28 22h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+        <circle cx="24" cy="26" r="14" stroke="currentColor" strokeWidth="2" />
+        <path d="M24 18v8l5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M14 12l-4-4M34 12l4-4M24 6v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
       </svg>
     ),
     title: 'Express Delivery',
     desc: '24-hr fast delivery for urgent orders.',
   },
   {
-    image: '/assets/images/dry_cleaning.jpg',
+    image: '/assets/images/commercial.jpg',
     icon: (
       <svg viewBox="0 0 48 48" fill="none">
-        <rect x="6" y="16" width="20" height="24" rx="3" stroke="currentColor" strokeWidth="2" />
-        <rect x="22" y="10" width="20" height="30" rx="3" stroke="currentColor" strokeWidth="2" />
-        <path d="M12 22h8M12 28h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
-        <path d="M28 16h8M28 22h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+        <rect x="10" y="18" width="12" height="24" rx="2" stroke="currentColor" strokeWidth="2" />
+        <rect x="22" y="10" width="16" height="32" rx="2" stroke="currentColor" strokeWidth="2" />
+        <path d="M14 26h4M14 34h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.8" />
+        <path d="M28 18h4M28 26h4M28 34h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.8" />
       </svg>
     ),
     title: 'Commercial',
