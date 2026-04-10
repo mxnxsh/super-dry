@@ -46,7 +46,7 @@ export const servicesData = [
     targetTab: 'steam-iron',
   },
   {
-    image: '/assets/images/shoes_accessories.jpg',
+    image: '/assets/images/shoe_accessories.jpg',
     icon: (
       <svg viewBox="0 0 48 48" fill="none">
         <path d="M10 34s4-8 12-8 16 4 16 8v2a2 2 0 01-2 2H12a2 2 0 01-2-2v-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
