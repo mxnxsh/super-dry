@@ -153,6 +153,17 @@
   transition: border-color 0.2s;
 }
 
+/* CSS animation replaces framer-motion per-item animation.
+   Eliminates 90+ motion instances → much lower CPU per tab switch */
+@keyframes rowFadeIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.pricelist__row-animated {
+  animation: rowFadeIn 0.25s ease-out both;
+}
+
 .pricelist__row:hover {
   border-color: rgba(43, 130, 201, 0.35);
 }

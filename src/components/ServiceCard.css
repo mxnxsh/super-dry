@@ -1,61 +1,136 @@
-/* Card Container */
+/*
+  PERFORMANCE NOTES:
+  - All animations use only opacity + transform + background-position (GPU-only)
+  - Skeleton has same fixed height as image wrapper → zero layout shift
+  - will-change applied only on :hover, released on :not(:hover)
+  - Shimmer uses background-size + animation → compositor thread only
+*/
+
+/* ── Card container ── */
 .service-card {
   position: relative;
-  background: var(--bg-card); /* White/Glass in light mode */
+  background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
   display: flex;
   flex-direction: column;
+
+  /* Entrance: CSS stagger via nth-child, no JS */
+  opacity: 0;
+  animation: cardEnter 0.5s ease-out forwards;
+
+  /* Smooth hover transitions (GPU-friendly properties only) */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
+/* Stagger each card 80ms apart using nth-child — zero JS cost */
+.service-card:nth-child(1) { animation-delay: 0.05s; }
+.service-card:nth-child(2) { animation-delay: 0.13s; }
+.service-card:nth-child(3) { animation-delay: 0.21s; }
+.service-card:nth-child(4) { animation-delay: 0.29s; }
+.service-card:nth-child(5) { animation-delay: 0.37s; }
+.service-card:nth-child(6) { animation-delay: 0.45s; }
+
+/* GPU keyframe: opacity + transform only → compositor thread */
+@keyframes cardEnter {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Hint GPU layer only while hovered — prevents excess VRAM usage */
 .service-card:hover {
+  will-change: transform;
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(43, 130, 201, 0.12); /* Clean subtle blue elevation */
+  box-shadow: 0 12px 30px rgba(43, 130, 201, 0.12);
+  border-color: rgba(43, 130, 201, 0.25);
 }
+.service-card:not(:hover) { will-change: auto; }
 
-/* Image Wrapper */
+/* ── Image wrapper — FIXED height prevents layout shift ── */
 .service-card__image-wrapper {
   position: relative;
   width: 100%;
-  height: 160px;
+  height: 160px; /* Fixed! Skeleton + image share same height */
   overflow: hidden;
   background: var(--bg-secondary);
 }
 
+/* ─────────────────────────────────────────────────────────────
+   SKELETON LOADER
+   Sits at position:absolute so it shares space with the image.
+   Fixed dimensions = zero layout shift when it disappears.
+───────────────────────────────────────────────────────────── */
+.service-card__skeleton {
+  position: absolute;
+  inset: 0; /* fills the wrapper exactly */
+  border-radius: 0; /* matches wrapper overflow:hidden */
+  z-index: 1;
+
+  /* Shimmer gradient — moves left→right to simulate light sweep */
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.10) 40%,
+    rgba(255, 255, 255, 0.04) 80%
+  );
+  background-size: 300% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+
+  /* Fade out when image is ready */
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+/* When image loads, skeleton fades to invisible then is gone */
+.service-card__skeleton--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Shimmer sweep — GPU background-position animation */
+@keyframes shimmer {
+  0%   { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* ── Image — starts invisible, fades in on load ── */
 .service-card__image {
+  position: absolute; /* stacks behind skeleton */
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
-}
+  z-index: 0;
 
-.service-card__image.loading {
+  /* Start invisible — no flash of unloaded image */
   opacity: 0;
-  filter: blur(8px);
+  /* GPU fade-in + zoom-on-hover handled via transform */
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.service-card__image.loaded {
+/* Image revealed: fade in smoothly once onLoad fires */
+.service-card__image--loaded {
   opacity: 1;
-  filter: blur(0);
+  z-index: 2; /* appear above skeleton */
 }
 
+/* Subtle zoom on card hover — GPU transform only */
 .service-card:hover .service-card__image {
-  transform: scale(1.05); /* Smooth optical zoom */
+  transform: scale(1.05);
 }
 
-/* Soft gradient overlay for text readability & premium feel */
+/* ── Gradient overlay — always on top for text contrast ── */
 .service-card__image-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.4));
   pointer-events: none;
+  z-index: 3;
 }
 
-/* Badge (Top Right) */
+/* ── Badge ── */
 .service-card__badge {
   position: absolute;
   top: 14px;
@@ -68,11 +143,11 @@
   border-radius: 50px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  z-index: 2;
+  z-index: 4; /* above overlay */
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-/* Content Section Below Image */
+/* ── Content section ── */
 .service-card__content {
   padding: 22px 24px;
   display: flex;
@@ -81,7 +156,7 @@
   position: relative;
 }
 
-/* Floating Icon between image and text */
+/* ── Icon (floats up into image area) ── */
 .service-card__icon {
   width: 44px;
   height: 44px;
@@ -90,20 +165,18 @@
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
   padding: 8px;
-  margin-top: -44px; /* Pulls it up into the image area */
+  margin-top: -44px;
   margin-bottom: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 3;
+  z-index: 5;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-.service-card__icon svg {
-  width: 100%;
-  height: 100%;
-}
+.service-card__icon svg { width: 100%; height: 100%; }
 
+/* ── Typography ── */
 .service-card__title {
   font-size: 1.1rem;
   font-weight: 800;

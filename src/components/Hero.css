@@ -237,4 +237,42 @@
   .hero__ring--2 { width: 248px; height: 248px; }
   .hero__badge--top { top: 10px; right: 10px; }
   .hero__badge--bottom { bottom: 10px; left: 10px; }
+
+  /* Logo responsive */
+  .hero__logo-img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__hanger-wrap { width: 220px; height: 220px; }
+  .hero__ring--1 { width: 176px; height: 176px; }
+  .hero__ring--2 { width: 210px; height: 210px; }
+  .hero__logo-img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Floating logo */
+.hero__logo-motion {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__logo-img {
+  width: 240px;
+  height: 240px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 16px;
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.3),
+    0 0 40px rgba(212, 175, 55, 0.2),
+    0 20px 60px rgba(0, 0, 0, 0.4);
 }

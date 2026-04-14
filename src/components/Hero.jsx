@@ -2,6 +2,13 @@ import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import './Hero.css'
 
+/* ─────────────────────────────────────────────────────────────
+   CONFIG — flip this flag to switch between logo and hanger
+   true  → show the brand logo
+   false → show the animated SVG hanger
+───────────────────────────────────────────────────────────── */
+const SHOW_LOGO = true
+
 function FloatingHanger() {
   return (
     <div className="hero__hanger-wrap">
@@ -67,6 +74,53 @@ function FloatingHanger() {
       />
 
       {/* Floating badges */}
+      <motion.div
+        className="hero__badge hero__badge--top"
+        animate={{ y: [0, -8, 0] }}
+        transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+      >
+        <span>✦</span> 48–72hr Delivery
+      </motion.div>
+      <motion.div
+        className="hero__badge hero__badge--bottom"
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+      >
+        <span>✦</span> Premium Clean
+      </motion.div>
+    </div>
+  )
+}
+
+function FloatingLogo() {
+  return (
+    <div className="hero__hanger-wrap">
+      {/* Floating logo image */}
+      <motion.div
+        className="hero__logo-motion"
+        animate={{ y: [0, -14, 0] }}
+        transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <img
+          src="/assets/images/logo.png"
+          alt="SuperDry Laundry Logo"
+          className="hero__logo-img"
+        />
+      </motion.div>
+
+      {/* Same orbital rings */}
+      <motion.div
+        className="hero__ring hero__ring--1"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+      />
+      <motion.div
+        className="hero__ring hero__ring--2"
+        animate={{ rotate: -360 }}
+        transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+      />
+
+      {/* Same floating badges */}
       <motion.div
         className="hero__badge hero__badge--top"
         animate={{ y: [0, -8, 0] }}
@@ -167,7 +221,7 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
         >
-          <FloatingHanger />
+          {SHOW_LOGO ? <FloatingLogo /> : <FloatingHanger />}
         </motion.div>
       </motion.div>
 
