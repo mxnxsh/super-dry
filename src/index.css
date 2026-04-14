@@ -37,6 +37,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* Removes blue/grey tap flash on iOS & Android WebKit */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent text being selected on long-press for interactive elements */
+button, a, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
 }
 
 html {
